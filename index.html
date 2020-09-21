@@ -22,22 +22,20 @@
   <p id="statusMessage"><b>statusMessage:</b> </p>
   <p id="decodedIDToken"><b>email:</b> </p>
 
-  <!-- <script src="https://static.line-scdn.net/liff/edge/versions/2.4.0/sdk.js"></script> -->
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.4.0/sdk.js"></script>
   <script>
     async function getUserProfile() {
     }
 
     function getEnvironment() {
+      document.getElementById('os').append(liff.getOS())
     }
 
     async function main() {
       alert("LIFF DEMO")
-      await liff.init({ liffId: "YOUR-LIFF-ID" })
-      // getEnvironment()
+      await liff.init({ liffId: "1654950089-2XZM91JM" })
+      getEnvironment()
       // getUserProfile()
-      // getContext()
-      // getFriendship()
-      // createUniversalLink()
     }
     main()
   </script>
