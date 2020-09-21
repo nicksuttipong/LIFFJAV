@@ -15,11 +15,13 @@
   <p id="accessToken"><b>AccessToken:</b> </p>
     <hr>
 
+  <div id="profile">
     <h1>Profile</h1>
-  <img id="pictureUrl">
-  <p id="userId"><b>userId:</b> </p>
-  <p id="displayName"><b>displayName:</b> </p>
-  <p id="statusMessage"><b>statusMessage:</b> </p>
+    <img id="pictureUrl">
+    <p id="userId"><b>userId:</b> </p>
+    <p id="displayName"><b>displayName:</b> </p>
+    <p id="statusMessage"><b>statusMessage:</b> </p>
+</div>
 
   <script src="https://static.line-scdn.net/liff/edge/versions/2.4.0/sdk.js"></script>
   <script>
@@ -37,6 +39,12 @@
       document.getElementById('version').append(liff.getVersion())
       document.getElementById('isInClient').append(liff.isInClient())
       document.getElementById('accessToken').append(liff.getAccessToken())
+
+      if(liff.isInClient()){
+        document.getElementById('profile').style.display = 'block'
+      } else {
+        document.getElementById('profile').style.display = 'none'
+      }
     }
 
     async function main() {
